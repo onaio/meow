@@ -5,8 +5,6 @@
 ;;; Code:
 
 (require 'haskell-interactive-mode)
-(require 'neotree)
-(require 'projectile)
 
 ;; clipboard
 (defun copy-to-clipboard ()
@@ -32,30 +30,23 @@
         (message "graphics active"))
     (insert (shell-command-to-string "xsel -o -b"))))
 
-;; If you use the find-file-in-project (ffip) library, you can open NeoTree at your directory root.
-(defun neotree-project-dir ()
-  "Open NeoTree using the git root."
-  (interactive)
-  (let ((project-dir (projectile-project-root))
-        (file-name (buffer-file-name)))
-    (if project-dir
-        (progn
-          (neotree-dir project-dir)
-          (neotree-find file-name))
-      (message "Could not find git project root."))))
+(global-set-key [f9] 'copy-to-clipboard)
+(global-set-key [f10] 'paste-from-clipboard)
 
 
 ;; neotree
 (global-set-key [f6] 'neotree-dir)
 (global-set-key [f7] 'neotree-project-dir)
 (global-set-key [f8] 'neotree-toggle)
+;;When running ‘projectile-switch-project’
+;; C-c p p ‘neotree’ will change root automatically.
+;; If you use the find-file-in-project (ffip) library,
+;; you can open NeoTree at your directory root by adding this code to your .emacs.d:
+(global-set-key (kbd "C-c C-p") 'neotree-project-dir)
 
-;; When running ‘projectile-switch-project’ (C-c p p), ‘neotree’ will change root automatically
-(setq projectile-switch-project-action 'neotree-projectile-action)
 
-;; clipboard
-(global-set-key [f9] 'copy-to-clipboard)
-(global-set-key [f10] 'paste-from-clipboard)
+;; Find file in project
+(global-set-key (kbd "C-x f") 'find-file-in-project)
 
 
 ;; avy
@@ -65,10 +56,6 @@
 
 ;; don't use vanilla emacs find file.
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
-
-
-;; Find file in project
-(global-set-key (kbd "C-x f") 'find-file-in-project)
 
 ;; clojure(script)
 ;; tests; given you comply with https://github.com/rags/toggle-test#configuring

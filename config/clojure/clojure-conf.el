@@ -9,37 +9,39 @@
 
 ;;; Code:
 
-(require 'flycheck-pos-tip)
+(require 'clj-refactor)
 (require 'projectile)
+(require 'aggressive-indent)
+;; TO DO: fix tags somehow
+;;https://github.com/snewman/lein-gentags
+(setq tags-revert-without-query 1)
 
-(add-hook 'emacs-lisp-mode-hook #'smartparens-strict-mode)
-(add-hook 'eval-expression-minibuffer-setup-hook #'smartparens-strict-mode)
-(add-hook 'ielm-mode-hook #'smartparens-strict-mode)
-(add-hook 'lisp-mode-hook #'smartparens-strict-mode)
-(add-hook 'scheme-mode-hook #'smartparens-strict-mode)
+(defun clj-refactor-clojure-mode-hook ()
+  (clj-refactor-mode 1)
+  (yas-minor-mode 1) ; for adding require/use/import statements
+  ;; This choice of keybinding leaves cider-macroexpand-1 unbound
+  (cljr-add-keybindings-with-prefix "C-c C-m"))
 
-(add-hook 'lisp-interaction-mode-hook #'smartparens-strict-mode)
-(add-hook 'lisp-interaction-mode-hook #'aggressive-indent-mode)
-(add-hook 'clojure-mode-hook #'smartparens-strict-mode)
-(add-hook 'clojure-mode-hook #'aggressive-indent-mode)
-
+;; make this use projectile
+;; and make it a hook
+(defun auto-test-discovery ()
+  (add-to-list tgt-projects '((:root-dir "")
+                              (:src-dirs "src")
+                              (:test-dirs "test")
+                              (:test-suffixes "_test"))))
 
 ;; flycheck
 (eval-after-load 'flycheck
   '(add-hook 'flycheck-mode-hook #'flycheck-clojure-setup))
-(eval-after-load 'flycheck
-  '(add-hook 'flycheck-mode-hook #'flycheck-pos-tip-mode))
 
-(eval-after-load 'flycheck
-  '(setq flycheck-display-errors-function #'flycheck-pos-tip-error-messages))
+;; Clojure mode hooks
+(add-hook 'clojure-mode-hook #'subword-mode)
+(add-hook 'clojure-mode-hook #'clj-refactor-clojure-mode-hook)
+(add-hook 'clojure-mode-hook #'enable-paredit-mode)
+(add-hook 'clojure-mode-hook #'smartparens-strict-mode)
+(add-hook 'clojure-mode-hook #'rainbow-delimiters-mode)
 
-;; gotta find `lein`
-(add-to-list 'exec-path "/usr/local/bin")
 
-(add-to-list 'tgt-projects '((:root-dir (projectile-project-root))
-                              (:src-dirs "src")
-                              (:test-dirs "test")
-                              (:test-suffixes "test")))
 
 
 (provide 'clojure-conf)

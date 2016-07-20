@@ -1,5 +1,6 @@
-elpa
 elpa/
+eshell/
 init-files/
 recentf
 *dat
+*eld

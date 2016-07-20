@@ -3,6 +3,9 @@
 ;;; Commentary:
 
 ;;; Code:
+;; to set exec-path
+(exec-path-from-shell-initialize)
+
 (add-hook 'magit-popup-mode #'flyspell-mode)
 
 (provide 'git-conf)
