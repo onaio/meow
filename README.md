@@ -35,7 +35,7 @@ meow has many key bindings but will list these for now.
 
 | keyboard shortcut   | Description                                                         |
 | --------------------|:-------------------------------------------------------------------:|
-|`f7`                 | Specify project directory e.g `~/src/clojure/major-work-project/`   |
+|`f7`                 | Specify project                                                     |
 |`f8`                 | Toggle neotree                                                      |
 |`C-c p p`            | Switch project                                                      |
 |`C-x f`              | Find a file in the current project                                  |
@@ -51,10 +51,12 @@ meow has many key bindings but will list these for now.
 |`C-!`                | open shell (eshell buffer below)                                    |
 |`C-x G`              | git status via magit                                                |
 |`s`                  | to stage files                                                      |
-|`c c`                | to commit (type the message then C-c C-c to actually commit)        |
-|`b b`                | to switch to another branch                                         |
-|`P u`                | to do a git push                                                    |
-|`F u`                | to do a git pull                                                    |
+|`C-x v C-h`          | magit help                                                          |
+|`C-x v =`            | View diff on the current buffer                                     |
+|`c c`                | Commit (type the message then C-c C-c to actually commit)           |
+|`b b`                | Switch to another branch                                            |
+|`P u`                | Git push                                                            |
+|`F u`                | Git pull                                                            |
 
 
 
