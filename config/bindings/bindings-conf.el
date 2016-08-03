@@ -55,7 +55,8 @@
 (global-set-key (kbd "s-w")   'ace-window)
 
 ;; don't use vanilla emacs find file.
-(global-set-key (kbd "C-x C-f") 'counsel-find-file)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
+(global-set-key (kbd "C-x b")   'helm-buffers-list)
 
 ;; clojure(script)
 ;; tests; given you comply with https://github.com/rags/toggle-test#configuring

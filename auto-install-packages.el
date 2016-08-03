@@ -20,7 +20,6 @@
         grizzl
         neotree
         magit
-        counsel
 
         ;;javascript
         js2-mode
