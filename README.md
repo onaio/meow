@@ -2,6 +2,8 @@
 
 **Lightweigt, beginner friendly emacs config for Haskell and Clojure.**
 
+*Inspired by Spacemacs and Emacs Live.*
+
 Why meow?
 
  - Easy project management.
@@ -33,13 +35,16 @@ meow has many key bindings but will list these for now.
 
 | keyboard shortcut   | Description                                                         |
 | --------------------|:-------------------------------------------------------------------:|
-|`f6`                 | Specify project directory e.g `~/src/clojure/major-work-project/`   |
-|`f7`                 | Set current project as the project directory                        |
+|`f7`                 | Specify project directory e.g `~/src/clojure/major-work-project/`   |
 |`f8`                 | Toggle neotree                                                      |
+|`C-c p p`            | Switch project                                                      |
 |`C-x f`              | Find a file in the current project                                  |
-|`C-c t`              | Jump to test file                                                   |
+|`C-x F`              | Find a file in the all the projects                                 |
+|`C-c p l`            | List of all files in a directory (that's not necessarily a project) |
+|`C-c p t`            | Jump to test file                                                   |
 |`M-.`                | Jump to definition                                                  |
 |`C-x r`              | Replace word with number suggestion above (during spellchecking)    |
+|`C-c p s g`          | Grep the files in the project.                                      |
 |`Del` or `Backspace` | will often delete all unnecessary whitespace backwards              |
 |`Shift + arrow-key`  | Move to frame                                                       |
 |`C-c j`              | jump to a word (will prompt you for the first and maybe second char)|
@@ -47,11 +52,11 @@ meow has many key bindings but will list these for now.
 |`C-x G`              | git status via magit                                                |
 |`s`                  | to stage files                                                      |
 |`c c`                | to commit (type the message then C-c C-c to actually commit)        |
-|`b b`                | to switch to another bra                                            |
+|`b b`                | to switch to another branch                                         |
 |`P u`                | to do a git push                                                    |
 |`F u`                | to do a git pull                                                    |
-|`C-c p p`            | Auto switch Projectile switch project. Switch neotree project root. |
-|`C-c C-p`            | Neotree switch project using find-file-in-project.                  |
+
+
 
 ## Supported languages
 Should work well out of the box for:
