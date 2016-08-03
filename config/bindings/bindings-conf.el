@@ -5,6 +5,9 @@
 ;;; Code:
 
 (require 'haskell-interactive-mode)
+(require 'cider)
+(require 'paredit)
+
 
 ;; clipboard
 (defun copy-to-clipboard ()
@@ -35,24 +38,21 @@
 
 
 ;; neotree
+;; When running ‘projectile-switch-project’
+;; `C-c p p` ‘neotree’ will change root automatically.
 (global-set-key [f6] 'neotree-dir)
-(global-set-key [f7] 'neotree-project-dir)
 (global-set-key [f8] 'neotree-toggle)
-;;When running ‘projectile-switch-project’
-;; C-c p p ‘neotree’ will change root automatically.
-;; If you use the find-file-in-project (ffip) library,
-;; you can open NeoTree at your directory root by adding this code to your .emacs.d:
-(global-set-key (kbd "C-c C-p") 'neotree-project-dir)
 
 
 ;; Find file in project
-(global-set-key (kbd "C-x f") 'find-file-in-project)
+(global-set-key (kbd "C-x f") 'projectile-find-file)
+(global-set-key (kbd "C-x F") 'projectile-find-file-in-known-projects)
 
 
 ;; avy
 (global-set-key (kbd "C-c j") 'avy-goto-word-or-subword-1)
-(global-set-key (kbd "s-.") 'avy-goto-word-or-subword-1)
-(global-set-key (kbd "s-w") 'ace-window)
+(global-set-key (kbd "s-.")   'avy-goto-word-or-subword-1)
+(global-set-key (kbd "s-w")   'ace-window)
 
 ;; don't use vanilla emacs find file.
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
@@ -90,6 +90,36 @@
 ;; git
 (global-set-key (kbd "C-x G") 'magit-status)
 
+;; paredit stealing
+(define-key clojure-mode-map (kbd "C-c l l") 'align-cljlet)
+(define-key clojure-mode-map (kbd "C-M-z")   'align-cljlet)
+
+(define-key paredit-mode-map (kbd "C-c l k") 'paredit-splice-sexp-killing-forward)
+(define-key paredit-mode-map (kbd "C-c l w") 'paredit-splice-sexp-killing-backward)
+(define-key paredit-mode-map (kbd "C-c l l") 'align-cljlet)
+(define-key paredit-mode-map (kbd "C-c l t") 'fill-paragraph)
+(define-key paredit-mode-map (kbd "C-c l j") 'live-paredit-forward-slurp-sexp-neatly)
+(define-key paredit-mode-map (kbd "C-M-e")   'paredit-backward-barf-sexp)
+(define-key paredit-mode-map (kbd "C-M-s")   'paredit-backward-slurp-sexp)
+(define-key paredit-mode-map (kbd "C-M-j")   'live-paredit-forward-slurp-sexp-neatly)
+(define-key paredit-mode-map (kbd "C-M-y")   'paredit-forward-barf-sexp)
+(define-key paredit-mode-map (kbd "C-M-z")   'align-cljlet)
+(define-key paredit-mode-map (kbd "M-S")     'paredit-split-sexp)
+(define-key paredit-mode-map (kbd "M-s")     'paredit-splice-sexp)
+(define-key paredit-mode-map (kbd "M-j")     'paredit-join-sexps)
+(define-key paredit-mode-map (kbd "M-P")     'live-paredit-previous-top-level-form)
+(define-key paredit-mode-map (kbd "M-N")     'live-paredit-next-top-level-form)
+(define-key paredit-mode-map (kbd "C-M-f")   'live-paredit-forward)
+(define-key paredit-mode-map (kbd "M-q")     'live-paredit-reindent-defun)
+(define-key paredit-mode-map (kbd "M-d")     'live-paredit-forward-kill-sexp)
+(define-key paredit-mode-map (kbd "M-k")     'live-paredit-backward-kill)
+(define-key paredit-mode-map (kbd "M-\\")    'live-paredit-delete-horizontal-space)
+(define-key paredit-mode-map (kbd "C-M-i")   'paredit-forward-down)
+(define-key paredit-mode-map (kbd "C-M-n")   'paredit-forward-up)
+(define-key paredit-mode-map (kbd "C-M-p")   'paredit-backward-down)
+(define-key paredit-mode-map (kbd "C-M-u")   'paredit-backward-up)
+(define-key paredit-mode-map (kbd "M-T")     'transpose-sexps)
+(define-key paredit-mode-map (kbd "C-M-k")   'live-paredit-copy-sexp-at-point)
 
 
 (provide 'bindings-conf)

@@ -17,6 +17,7 @@
         solarized-theme
         smart-mode-line
         projectile
+        grizzl
         neotree
         magit
         counsel
@@ -47,7 +48,6 @@
         toggle-test
         flycheck
         flycheck-pos-tip
-        find-file-in-project
         smartparens
         rainbow-delimiters
         mic-paren))
