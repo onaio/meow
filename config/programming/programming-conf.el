@@ -27,11 +27,9 @@
 ;; for most programming languages
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 (add-hook 'prog-mode-hook #'smartparens-strict-mode)
-(add-hook 'prog-mode-hook #'aggressive-indent-mode)
 (add-hook 'prog-mode-hook #'paren-activate)
 
-
-(add-to-list 'aggressive-indent-excluded-modes 'html-mode)
-
+;; lisps
+(add-hook 'lisp-mode-hook #'aggressive-indent-mode)
 
 (provide 'programming-conf)

@@ -35,8 +35,7 @@ meow has many key bindings but will list these for now.
 
 | keyboard shortcut   | Description                                                         |
 | --------------------|:-------------------------------------------------------------------:|
-|`f7`                 | Specify project                                                     |
-|`f8`                 | Toggle neotree                                                      |
+|`f8`                 | Toggle neotree buffer                                               |
 |`C-c p p`            | Switch project                                                      |
 |`C-x f`              | Find a file in the current project                                  |
 |`C-x F`              | Find a file in the all the projects                                 |
@@ -66,6 +65,7 @@ Should work well out of the box for:
 - JavaScript
 - Haskell
 - Markdown
+- Yaml
 
 ## License
 MIT

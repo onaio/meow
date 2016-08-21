@@ -7,7 +7,7 @@
 (require 'haskell-interactive-mode)
 (require 'cider)
 (require 'paredit)
-
+(require 'projectile)
 
 ;; clipboard
 (defun copy-to-clipboard ()
@@ -40,7 +40,7 @@
 ;; neotree
 ;; When running ‘projectile-switch-project’
 ;; `C-c p p` ‘neotree’ will change root automatically.
-(global-set-key [f7] 'neotree-dir)
+;; (global-set-key [f7] '(neotree-refresh projectile-project-root))
 (global-set-key [f8] 'neotree-toggle)
 
 

@@ -43,6 +43,9 @@
         ;; lisps
         paredit
 
+        ;; yaml mode
+        yaml-mode
+
         ;; programming
         toggle-test
         flycheck
