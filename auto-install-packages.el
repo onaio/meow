@@ -20,6 +20,7 @@
         grizzl
         neotree
         magit
+        helm
 
         ;;javascript
         js2-mode

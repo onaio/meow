@@ -43,7 +43,6 @@
 ;; (global-set-key [f7] '(neotree-refresh projectile-project-root))
 (global-set-key [f8] 'neotree-toggle)
 
-
 ;; Find file in project
 (global-set-key (kbd "C-x f") 'projectile-find-file)
 (global-set-key (kbd "C-x F") 'projectile-find-file-in-known-projects)

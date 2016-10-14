@@ -7,8 +7,8 @@
 (require 'neotree)
 (require 'projectile)
 
+
 (projectile-global-mode)
-(setq projectile-require-project-root nil)
 (setq projectile-completion-system 'grizzl)
 
 (setq neo-theme 'arrow)
