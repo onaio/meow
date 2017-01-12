@@ -32,4 +32,9 @@
 ;; lisps
 (add-hook 'lisp-mode-hook #'aggressive-indent-mode)
 
+;; css and sass
+(require 'flymake-sass)
+(add-hook 'sass-mode-hook 'flymake-sass-load)
+(add-to-list 'auto-mode-alist '("\\.scss\\'" . sass-mode))
+
 (provide 'programming-conf)

@@ -17,7 +17,10 @@
 ;; neotree will change root automatically
 (setq projectile-switch-project-action 'neotree-projectile-action)
 (setq neo-smart-open t)
-(setq neo-show-hidden-files t)
+;; (setq neo-show-hidden-files t)
+
+(setq neo-hidden-regexp-list '("\\.pyc$" "~$" "^#.*#$" "\\.elc$"))
+(setq neo-show-hidden-files nil)
 
 (provide 'proj-conf)
 ;;; proj-conf.el ends here.

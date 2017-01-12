@@ -35,6 +35,23 @@
 
 (windmove-default-keybindings)
 
+(custom-set-variables
+ '(with-editor-emacsclient-executable "/usr/local/bin/emacsclient"))
+
+;; Add gems to my PATH
+(let ((gem-path (expand-file-name "~/.gem/ruby/2.3.0/bin")))
+  (setenv "PATH" (concat gem-path ":" (getenv "PATH")))
+  (add-to-list 'exec-path gem-path))
+
+;; Stack installs binaries into ~/.local/bin so we point it there.
+(let ((user-path (expand-file-name "~/.local/bin/")))
+  (setenv "PATH" (concat user-path ":" (getenv "PATH")))
+  (add-to-list 'exec-path user-path))
+;; Stack installs ghc, runhaskell and others here.
+(let ((my-stack-path (expand-file-name "~/.stack/programs/x86_64-osx/ghc-8.0.1/bin")))
+  (setenv "PATH" (concat my-stack-path ":" (getenv "PATH")))
+  (add-to-list 'exec-path my-stack-path))
+
 
 (provide 'base)
 ;;; base.el ends here

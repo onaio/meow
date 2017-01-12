@@ -35,6 +35,11 @@
         ;; haskell
         flycheck-haskell
         shm
+        company-ghci
+        haskell-mode
+
+        ;; python
+        python-mode
 
         ;; text interaction
         markdown-mode
@@ -46,6 +51,17 @@
 
         ;; yaml mode
         yaml-mode
+
+        ;; web
+        tagedit
+        css-mode
+        sass-mode
+        flymake-sass
+
+        ;; json
+        json-mode
+        flymake-json
+        json-reformat
 
         ;; programming
         toggle-test

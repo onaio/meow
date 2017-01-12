@@ -4,7 +4,7 @@
 
 ;;; Code:
 
-(require 'haskell-interactive-mode)
+(require 'haskell-mode)
 (require 'cider)
 (require 'paredit)
 (require 'projectile)
@@ -46,7 +46,7 @@
 ;; Find file in project
 (global-set-key (kbd "C-x f") 'projectile-find-file)
 (global-set-key (kbd "C-x F") 'projectile-find-file-in-known-projects)
-
+(global-set-key (kbd "C-c o p") 'projectile-switch-open-project)
 
 ;; avy
 (global-set-key (kbd "C-c j") 'avy-goto-word-or-subword-1)
@@ -64,20 +64,22 @@
 ;; spelling
 (global-set-key (kbd "C-x r") 'ispell-word)
 
-;; haskell
-;; Key bindings from the wiki
-(define-key haskell-mode-map (kbd "C-c C-l") 'haskell-process-load-or-reload)
-(define-key haskell-mode-map (kbd "C-`") 'haskell-interactive-bring)
-(define-key haskell-mode-map (kbd "C-c C-t") 'haskell-process-do-type)
-(define-key haskell-mode-map (kbd "C-c C-i") 'haskell-process-do-info)
-(define-key haskell-mode-map (kbd "C-c C-c") 'haskell-process-cabal-build)
-(define-key haskell-mode-map (kbd "C-c C-k") 'haskell-interactive-mode-clear)
-(define-key haskell-mode-map (kbd "C-c c") 'haskell-process-cabal)
-(define-key haskell-mode-map (kbd "SPC") 'haskell-mode-contextual-space)
+;;; haskell
+(define-key haskell-mode-map (kbd "C-c C-l")     'haskell-process-load-file)
+(define-key haskell-mode-map (kbd "C-c C-z")     'haskell-interactive-switch)
+(define-key haskell-mode-map (kbd "C-c C-n C-t") 'haskell-process-do-type)
+(define-key haskell-mode-map (kbd "C-c C-n C-i") 'haskell-process-do-info)
+(define-key haskell-mode-map (kbd "C-c C-n C-c") 'haskell-process-cabal-build)
+(define-key haskell-mode-map (kbd "C-c C-n c")   'haskell-process-cabal)
 
-;; Focus on imports block in source file
+(define-key haskell-cabal-mode-map (kbd "C-c C-z") 'haskell-interactive-switch)
+(define-key haskell-cabal-mode-map (kbd "C-c C-k") 'haskell-interactive-mode-clear)
+(define-key haskell-cabal-mode-map (kbd "C-c C-c") 'haskell-process-cabal)
+(define-key haskell-cabal-mode-map (kbd "C-c c")   'haskell-process-cabal)
+
+;; Jump to imports
 (define-key haskell-mode-map [f12] 'haskell-navigate-imports)
-
+;; hasktags
 (define-key haskell-mode-map (kbd "M-.") 'haskell-mode-jump-to-def-or-tag)
 
 ; The below commands pretty much match the ones above, but are handy to have in cabal-mode, too:
@@ -85,7 +87,6 @@
 (define-key haskell-cabal-mode-map (kbd "C-c C-k") 'haskell-interactive-mode-clear)
 (define-key haskell-cabal-mode-map (kbd "C-c C-c") 'haskell-process-cabal-build)
 (define-key haskell-cabal-mode-map (kbd "C-c c") 'haskell-process-cabal)
-
 
 ;; git
 (global-set-key (kbd "C-x G") 'magit-status)
