@@ -1,37 +1,53 @@
 # meow
 
-**Lightweigt, beginner friendly emacs config for Haskell and Clojure.**
+**A lightweigt, beginner friendly emacs config mainly for Haskell and Clojure.**
 
-*Inspired by Spacemacs and Emacs Live.*
+*Inspired by [Spacemacs] and [Emacs Live].*
 
-Why meow?
+## Why meow?
 
- - Easy project management.
- - Easy on the eyes (solarize dark all the things).
+ - Easy project management
+ - Easy on the eyes (solarized dark)
  - Lightweight
  - Beginner friendly
  - Easy auto completion
- - Spell checking for Markdown. I can't think of any other place we'd want this.
- - Doesn't allow tabs; auto converts them to spaces to play well with whitespace mode.
- - Deletes unnecessary whitespace and newlines at the end of the file on save.
+ - Spell checking for Markdown (I can't think of any other place we'd want this).
+ - Auto converts tabs to spaces
+ - Auto-deletes trailing whitespace and blank lines at the start and end of source files on save.
  - Highlights code that is beyond 80 characters.
+ - Uses the latest packages, you don't have to depend on "frozen" dependencies.
 
+## Installation
+Rename your `~/.emacs.d` to something else  
+Clone this repo wherever you wish and use it as your emacs cofig file.
 
-## Usage
-Move your `~/.emacs.d` or rename it to something else e.g ~/.emacs.d.old
+**Cloning into ~/emacs.d**
+``` bash
+if [ -d "~/.emacs.d" ]; then
+  mv ~/.emacs.d ~/.emacs.d.old
+fi
 
-clone this repo wherever you wish and `ls -s <path/to/meow> ~/.emacs.d`
+git clone git@github.com:onaio/meow.git ~/.emacs.d
+```
 
-or
+**Using a symlink**
+```bash
+if [ -d "~/.emacs.d" ]; then
+  mv ~/.emacs.d ~/.emacs.d.old
+fi
 
-`git clone git@github.com:onaio/meow.git ~/.emacs.d`
+ln -s <path/to/meow> ~/.emacs.d
 
-Run emacs the way you normally would.
-Take a cup of coffee as it installs the necessary packages (first time only).
+```
+
+Start/restart emacs  
+Wait for it to install the necessary packages (first time only).
+
+## Documentation
+The project page is still a work in progress [https://onaio.github.io/meow]
 
 ## Key bindings
 meow has many key bindings but will list these for now.
-
 
 | keyboard shortcut   | Description                                                         |
 | --------------------|:-------------------------------------------------------------------:|
@@ -58,15 +74,21 @@ meow has many key bindings but will list these for now.
 |`F u`                | Git pull                                                            |
 
 
-
 ## Supported languages
 Should work well out of the box for:
 - Clojure
-- JavaScript
 - Haskell
+- JavaScript
 - Markdown
 - Yaml
+- Python (still buggy)
 
 ## License
 MIT
-See LICESE file.
+See [LICENSE] file.
+
+
+[Spacemacs]: https://github.com/syl20bnr/spacemacs
+[Emacs Live]: https://github.com/overtone/emacs-live
+[LICENSE]: https://github.com/onaio/meow/blob/master/LICENSE
+[https://onaio.github.io/meow]: https://onaio.github.io/meow
