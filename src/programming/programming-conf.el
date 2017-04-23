@@ -1,21 +1,20 @@
-;;; programming-conf ---
-;;; Commentary
+;;; programming-conf --- generic programming configs
+;;; Commentary:
 ;;; Code:
 
 (require 'aggressive-indent)
 (require 'whitespace)
 
-;; whitespace matters.
+;; whitespace
 (setq-default indent-tabs-mode nil)
 (setq whitespace-style '(face empty tabs lines-tail trailing))
 (global-whitespace-mode t)
-(add-hook 'before-save-hook #'delete-trailing-whitespace)
 
 ;; toggle test
 (setq tgt-open-in-new-window 'nil)
 
+;;; Hooks
 
-;; Hooks
 ;; flycheck
 (add-hook 'after-init-hook #'global-flycheck-mode)
 (eval-after-load 'flycheck
@@ -23,6 +22,9 @@
 (eval-after-load 'flycheck
   '(setq flycheck-display-errors-function #'flycheck-pos-tip-error-messages))
 
+;; delete trailing whitepace in source code
+(add-hook 'prog-mode-hook
+          (lambda () (add-to-list 'write-file-functions 'delete-trailing-whitespace)))
 
 ;; for most programming languages
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)

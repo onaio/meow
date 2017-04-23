@@ -19,12 +19,12 @@
     (other-window 1)
     (eshell "new")
     (rename-buffer (concat "*eshell: " name "*"))
- 
+
     (insert (concat "ls"))
     (eshell-send-input)))
- 
+
 (global-set-key (kbd "C-!") 'eshell-here)
- 
+
 (defun eshell/!x ()
   "Close eshell."
   (insert "exit")
@@ -37,9 +37,9 @@
   (interactive)
   ;; the shell prompts are read-only, so clear that for the duration
   (let ((inhibit-read-only t))
-	;; simply delete the region
-  (eshell-send-input)
-	(delete-region (point-min) (point-max))))
+    ;; simply delete the region
+    (eshell-send-input)
+    (delete-region (point-min) (point-max))))
 
 (provide 'eshell-conf)
 

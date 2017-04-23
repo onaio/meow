@@ -11,8 +11,8 @@
 (add-hook 'haskell-mode-hook 'interactive-haskell-mode)
 (add-hook 'haskell-mode-hook 'structured-haskell-mode)
 
-(add-hook 'structured-haskell-mode-hook '(set-face-background 'shm-current-face "#344246"))
-(add-hook 'structured-haskell-mode-hook '(set-face-background 'shm-quarantine-face "#073642"))
+;; (add-hook 'structured-haskell-mode-hook '(set-face-background 'shm-current-face "#344246"))
+;; (add-hook 'structured-haskell-mode-hook '(set-face-background 'shm-quarantine-face "#073642"))
 
 (eval-after-load 'flycheck '(add-hook 'flycheck-mode-hook #'flycheck-haskell-setup))
 

@@ -17,7 +17,7 @@
 
 ;; ispell
 (defvar ispell-program-name)
-(setq ispell-program-name "/usr/local/bin/ispell")
+(setq ispell-program-name "/usr/local/bin/aspell")
 (require 'flyspell)
 
 (add-hook 'markdown-mode-hook #'flyspell-mode)

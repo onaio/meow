@@ -1,22 +1,16 @@
 ;;; emacs-init-file -- Init file by Njagi Mwaniki
-;; License: GPL version 3
-
 
 ;;; Commentary:
 ;; This init file has been spread out over several files to get rid of clutter.
-;; It also makes it easier for one to replicate certain features without woorrying about cross dependencies.
+;; It also makes it easier for one to replicate certain features without
+;; woorrying about cross dependencies.
 ;; Each file can stand on it's own.
 
 
 ;;; Code:
-
-;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
-;; You may delete these explanatory comments.
 (package-initialize)
 
-(let ((default-directory  "~/.emacs.d/config/"))
+(let ((default-directory  "~/.emacs.d/src/"))
   (normal-top-level-add-to-load-path
    '("base"
      "erc"

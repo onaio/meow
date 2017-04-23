@@ -1,11 +1,10 @@
 ;;; base --- base config file for meow
-;; License: GPL version 3
-
-
 ;;; Commentary:
-;; Code will be added and removed from this file at will.
-
 ;;; Code:
+
+(require 'org)
+
+; comment out to stop emacs from  starting in full screen.
 (toggle-frame-fullscreen)
 
 ;; tramp timeout
@@ -15,14 +14,13 @@
 ;; company mode
 (global-company-mode)
 
-;; to have y/n instead of explicit yes no
+;; Accept y/n instead of explicit yes no
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 ;; Don't want a scroll-bar, tool-bar or a menu-bar.
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (if (fboundp 'tool-bar-mode)   (tool-bar-mode -1))
 (if (fboundp 'menu-bar-mode)   (menu-bar-mode -1))
-
 
 ;; add htop to eshell visual commands
 ;; (add-to-list 'eshell-visual-commands "htop")
@@ -31,13 +29,19 @@
 
 ;; Disable the welcome message
 (setq inhibit-startup-message t)
-(setq initial-scratch-message "") ;; set initial scratch message. Set as blank
+(setq initial-scratch-message "")
 
 (windmove-default-keybindings)
 
 (custom-set-variables
  '(with-editor-emacsclient-executable "/usr/local/bin/emacsclient"))
 
+;; org mode
+(define-key global-map "\C-cl" 'org-store-link)
+(define-key global-map "\C-ca" 'org-agenda)
+(setq org-log-done t)
+
+;; To do: make these query the env they're running in.
 ;; Add gems to my PATH
 (let ((gem-path (expand-file-name "~/.gem/ruby/2.3.0/bin")))
   (setenv "PATH" (concat gem-path ":" (getenv "PATH")))
@@ -52,6 +56,8 @@
   (setenv "PATH" (concat my-stack-path ":" (getenv "PATH")))
   (add-to-list 'exec-path my-stack-path))
 
+; set font size
+; (set-face-attribute 'default nil :height 300)
 
 (provide 'base)
 ;;; base.el ends here
