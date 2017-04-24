@@ -1,0 +1,21 @@
+name:                meow
+version:             0.0.0.1
+synopsis:            markdown docs for meow
+-- description:
+homepage:            https://github.com/githubuser/meow#readme
+license:             GFDL
+license-file:        LICENSE
+author:              Njagi Mwaniki
+maintainer:          njagi@urbanslug.com
+copyright:           2017 Njagi Mwaniki
+category:            Web
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+
+executable meow
+  main-is:             site.hs
+  default-language:    Haskell2010
+  ghc-options:         -threaded
+  build-depends:       base >= 4.7 && < 5,
+                       hakyll

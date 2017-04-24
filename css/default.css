@@ -1,0 +1,157 @@
+/* Fonts */
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,300,300italic,400,400italic,700,700italic);
+html,
+body {
+    color: black;
+    font-size: 100%;
+    font-family: 'Roboto', sans-serif;
+    margin: 0px;
+    padding:0;
+    height: 100%;
+    background: #fff;
+}
+
+#wrapper {
+    min-height:100%;
+    position:relative;
+}
+
+header {
+    top: 0;
+    position:fixed;
+    padding: 12px 0px 12px 0px;
+    width: 100%;
+    font-size: 18px;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.26);
+    background: #24292e;
+    margin-bottom: 30px;
+}
+
+header #header-content {
+    max-width: 650px; /*Same as content width*/
+    margin: auto;
+}
+
+header #header-content div#logo p{
+    margin: auto;
+    color: black;
+    float: left;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+div#blog-title {
+    font-weight: 300;
+    font-size: 50px;
+    margin: auto;
+    text-align: center;
+}
+
+div#wrapper{
+    min-height:
+    position:relative;
+}
+
+header nav {
+    text-align: center;
+}
+
+header #header-content nav a {
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-right: 1%;
+    padding: 2%;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+h2 {
+    font-size: 20px;
+    margin-top: 3em;
+}
+
+h3 {
+    margin-top: 3em;
+    font-size: 18px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+}
+
+div.info {
+    color: #555;
+    font-size: 14px;
+    font-style: italic;
+    margin: 20px auto 20px auto;
+}
+
+article {
+    margin: 0 auto 0 auto;
+    width: 650px;
+    font-weight: 300;
+    font-size: 16px;
+    display: block;
+    padding: 5em 0 150px 0;
+}
+
+#posts li:before {
+    content: "→";
+    margin-right: 4px;
+}
+
+#posts li {
+    list-style-type: none;
+}
+
+body a {
+    text-decoration: none;
+}
+
+body a:link {
+    color: #0066FF;
+}
+
+body a:visited {
+    color: #5E5E8E;
+}
+
+article ul#post-list li.individual-post {
+    border-bottom: 1px solid #DFDFDF;
+    padding: 1%;
+    padding-left: 5%;
+}
+
+table {
+    border-collapse: collapse;
+    box-shadow: 0 2px 5px rgba(151, 151, 151, 0.58);
+}
+
+table, th, td {
+    padding: 15px;
+    text-align: left;
+    border: 1px solid #DFDFDF;
+}
+
+tr:nth-child(odd) td {
+  background:#EBEBEB;
+}
+
+footer {
+    color: black;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    border-top: 1px solid #ccc;
+    padding: 12px 0px 12px 0px;
+    height:20px;
+    bottom:0;
+    z-index: 1;
+    font-weight: 300;
+    font-size: small;
+}
