@@ -43,6 +43,7 @@ ln -s <path/to/meow> ~/.emacs.d
   3. Start/restart emacs
   4. Wait for it to install the necessary packages (first time only).
 
+
 ## Supported languages
 Should work well out of the box for:
 - Clojure
@@ -58,7 +59,7 @@ The project page is still a work in progress [https://onaio.github.io/meow]
 
 
 ## License
-MIT
+MIT  
 See [LICENSE] file.
 
 
