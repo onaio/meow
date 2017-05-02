@@ -59,5 +59,12 @@
 ; set font size
 ; (set-face-attribute 'default nil :height 300)
 
+;; org mode
+(custom-set-variables
+ '(org-directory "~/src/generic/org")
+ '(org-agenda-files (list org-directory)))
+
+(setq org-log-done t)
+
 (provide 'base)
 ;;; base.el ends here

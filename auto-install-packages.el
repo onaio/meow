@@ -65,6 +65,7 @@
         ;; programming
         toggle-test
         flycheck
+        smart-tabs-mode
         flycheck-pos-tip
         smartparens
         rainbow-delimiters

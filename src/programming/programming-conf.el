@@ -9,6 +9,7 @@
 (setq-default indent-tabs-mode nil)
 (setq whitespace-style '(face empty tabs lines-tail trailing))
 (global-whitespace-mode t)
+(setq tab-width 2)
 
 ;; toggle test
 (setq tgt-open-in-new-window 'nil)

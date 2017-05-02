@@ -122,6 +122,10 @@
 (define-key paredit-mode-map (kbd "M-T")     'transpose-sexps)
 (define-key paredit-mode-map (kbd "C-M-k")   'live-paredit-copy-sexp-at-point)
 
+;; org mode
+(define-key global-map "\C-cl" 'org-store-link)
+(define-key global-map "\C-ca" 'org-agenda)
+
 
 (provide 'bindings-conf)
 ;;; bindings-conf.el ends here
