@@ -23,6 +23,7 @@
 
         ;;javascript
         js2-mode
+        prettier-js
 
         ;; clojure
         clojure-mode
