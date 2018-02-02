@@ -7,7 +7,7 @@
 
 ;; whitespace
 (setq-default indent-tabs-mode nil)
-(setq whitespace-style '(face empty tabs lines-tail trailing))
+(setq whitespace-style '(face empty tabs trailing))
 (global-whitespace-mode t)
 (setq tab-width 2)
 
