@@ -5,6 +5,11 @@
 (require 'org)
 (require 'fill-column-indicator)
 
+;; enable fci-mode as a global minor mode
+(define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
+(setq fci-rule-color "#555")
+(global-fci-mode 1)
+
 ; comment out to stop emacs from  starting in full screen.
 ;(toggle-frame-fullscreen)
 
