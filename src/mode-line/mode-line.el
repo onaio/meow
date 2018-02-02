@@ -16,8 +16,7 @@
 (sml/setup)
 
 ;; time
-(setq display-time-string-forms
-      '((concat " " 24-hours ":" minutes " ")))
+(setq display-time-string-forms '((concat " " 24-hours ":" minutes " ")))
 (display-time-mode 1)
 
 ;; battery
