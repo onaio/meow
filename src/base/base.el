@@ -13,6 +13,9 @@
 ; comment out to stop emacs from  starting in full screen.
 ;(toggle-frame-fullscreen)
 
+;; show column number
+(column-number-mode t)
+
 ;; tramp timeout
 ;; Increase tramp timeout from 5 seconds to 300 seconds
 (setq password-cache-expiry 300)
