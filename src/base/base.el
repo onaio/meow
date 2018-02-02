@@ -3,9 +3,10 @@
 ;;; Code:
 
 (require 'org)
+(require 'fill-column-indicator)
 
 ; comment out to stop emacs from  starting in full screen.
-(toggle-frame-fullscreen)
+;(toggle-frame-fullscreen)
 
 ;; tramp timeout
 ;; Increase tramp timeout from 5 seconds to 300 seconds

@@ -15,6 +15,7 @@
         powerline
         solarized-theme
         smart-mode-line
+        fill-column-indicator
         projectile
         grizzl
         neotree
